@@ -8,34 +8,39 @@
 </head>
 <body>
     <div>
+        
         <h1>Distance Converter</h1>
+        <form>
         <label for="ConvertFrom">Choose a unit to convert from:</label>
         <select name="ConvertFrom" id="convertingFromUnit">
-            <option value="Millimetres">Millimetres</option>
-            <option value="Centimetres">Centimetres</option>
-            <option value="Metres">Metres</option>
-            <option value="Kilometres">Kilometres</option>
-            <option value="Inches">Inches</option>
-            <option value="Feet">Feet</option>
-            <option value="Miles">Miles</option>
+            <option value="1000">Millimetres</option>
+            <option value="100">Centimetres</option>
+            <option value="1">Metres</option>
+            <option value="0.001">Kilometres</option>
+            <option value="39.3701">Inches</option>
+            <option value="3.28084">Feet</option>
+            <option value="0.000621371">Miles</option>
         </select>
         <div>
             <label for="ConvertTo">Choose a unit to convert to:</label>
         <select name="ConvertTo" id="convertingToUnit">
-            <option value="Millimetres">Millimetres</option>
-            <option value="Centimetres">Centimetres</option>
-            <option value="Metres">Metres</option>
-            <option value="Kilometres">Kilometres</option>
-            <option value="Inches">Inches</option>
-            <option value="Feet">Feet</option>
-            <option value="Miles">Miles</option>
+            <option value="1000" selected="selected">Millimetres</option>
+            <option value="100">Centimetres</option>
+            <option value="1">Metres</option>
+            <option value="0.001">Kilometres</option>
+            <option value="39.3701">Inches</option>
+            <option value="3.28084">Feet</option>
+            <option value="0.000621371">Miles</option>
         </select>
         </div>
+        <label for="QuantityBox">Choose a quantity to convert from:</label>
+        <input name="QuantityBox" id="quantityInputBox" type="text">
         <div>
-            <button>Convert</button>
-            <p>Answer:</p>
+            <button id="button" onclick="ConvertUnits()" type="button">Convert</button>
+            <p id="answerText">Answer:</p>
         </div>
-        
+        </form>
+        <script src="Converter.js" type="application/javascript"></script>
     </div>    
 </body>
 </html>
