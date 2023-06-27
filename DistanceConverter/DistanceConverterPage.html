@@ -9,37 +9,61 @@
 <body>
     <div>
         
+        <!--Title of the program-->
         <h1>Distance Converter</h1>
+        <!--Start of the input to the form that takes the player input-->
         <form>
-        <label for="ConvertFrom">Choose a unit to convert from:</label>
-        <select name="ConvertFrom" id="convertingFromUnit">
-            <option value="1000">Millimetres</option>
-            <option value="100">Centimetres</option>
-            <option value="1">Metres</option>
-            <option value="0.001">Kilometres</option>
-            <option value="39.3701">Inches</option>
-            <option value="3.28084">Feet</option>
-            <option value="0.000621371">Miles</option>
+        
+            <label for="ConvertFrom">Choose a unit to convert from:</label>
+            <!--Dropdown box that allows the user to select the unit to convert from-->
+            <select name="ConvertFrom" id="convertingFromUnit">
+        
+                <option value="1000">Millimetres</option>
+        
+                <option value="100">Centimetres</option>
+        
+                <option value="1">Metres</option>
+        
+                <option value="0.001">Kilometres</option>
+        
+                <option value="39.3701">Inches</option>
+        
+                <option value="3.28084">Feet</option>
+        
+                <option value="0.000621371">Miles</option>
         </select>
         <div>
             <label for="ConvertTo">Choose a unit to convert to:</label>
-        <select name="ConvertTo" id="convertingToUnit">
-            <option value="1000" selected="selected">Millimetres</option>
-            <option value="100">Centimetres</option>
-            <option value="1">Metres</option>
-            <option value="0.001">Kilometres</option>
-            <option value="39.3701">Inches</option>
-            <option value="3.28084">Feet</option>
-            <option value="0.000621371">Miles</option>
-        </select>
+            <!--Dropdown box to select unit to convert to-->
+            <select name="ConvertTo" id="convertingToUnit">
+        
+                <option value="1000" selected="selected">Millimetres</option>
+        
+                <option value="100">Centimetres</option>
+        
+                <option value="1">Metres</option>
+        
+                <option value="0.001">Kilometres</option>
+        
+                <option value="39.3701">Inches</option>
+        
+                <option value="3.28084">Feet</option>
+        
+                <option value="0.000621371">Miles</option>
+        
+            </select>
         </div>
         <label for="QuantityBox">Choose a quantity to convert from:</label>
-        <input name="QuantityBox" id="quantityInputBox" type="text">
+        <!--Text box that lets the player enter the quantity of the chosen unit to convert-->
+        <input name="QuantityBox" id="quantityInputBox" type="number">
         <div>
+            <!--Button that runs the program to convert-->
             <button id="button" onclick="ConvertUnits()" type="button">Convert</button>
+            <!--Displays the answer-->
             <p id="answerText">Answer:</p>
         </div>
         </form>
+        <!--Links the script to the project-->
         <script src="Converter.js" type="application/javascript"></script>
     </div>    
 </body>
