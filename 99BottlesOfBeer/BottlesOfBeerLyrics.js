@@ -60,7 +60,7 @@ function TextToSpeech(i)
     oHttp.open("POST", "https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld");
     oHttp.setRequestHeader("Accept", "audio/mpeg");
     oHttp.setRequestHeader("Content-Type", "application/json");
-    oHttp.setRequestHeader("xi-api-key", "4b2cf4739f54a9fa40f8ca17f0fe90fd");
+    oHttp.setRequestHeader("xi-api-key", "445f80c1fe08a68ffc5a6ee07ce8827b");
 
     oHttp.onload = function () {
         if (oHttp.readyState === 4) {
