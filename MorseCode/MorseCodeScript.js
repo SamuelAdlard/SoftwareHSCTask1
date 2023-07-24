@@ -26,8 +26,26 @@ const morseCodeTable ={
   "Y": "-.--",
   "Z": "--..",
   " ": "/",
-  ".":"/... - --- .--."
+  ".":"/... - --- .--.",
+  "0": "-----",
+  "1": ".----",
+  "2": "..---",
+  "3": "...--",
+  "4": "....-",
+  "5": ".....",
+  "6": "-....",
+  "7": "--...",
+  "8": "---..",
+  "9": "----."
 }
+
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const oscillator = audioContext.createOscillator();
+oscillator.connect(audioContext.destination);
+oscillator.frequency.value = 440; // 440 Hz is the frequency of the note A
+oscillator.type = 'sine';
+
+
 
 function Translate()
 {
@@ -41,40 +59,48 @@ function Translate()
 
   document.getElementById("Output").innerHTML=outputText;
   console.log(outputText);
-  GenerateAudio(outputText);
-}
-
-function GenerateAudio(outputText)
-{
-  const times = {
-    ".":1,
-    "-":3,
-    " ":3,
-    "/":7 
-  }
-
-  for(let i = 0; i < outputText.length; i++)
+  
+  for(let i = 1; i <= outputText.length; i++)
   {
-    //alert(times[outputText[i]]);
-    if(outputText[i] != "/" || outputText[i] != " "){
-      PlayAudio(times[outputText[i]], 550);
-    }
-    else{
-      PlayAudio(times[outputText[i]], 1);
-    }
+    setTimeout(() =>{
+    
+      GenerateAudio(".",0);
+    }, 1000 * i) //put this in a for loop and multiply the time by the index
   }
 
-
+  
+  
+  
+  
 }
 
-
-function PlayAudio(time, frequency)
+function GenerateAudio(outputText, index)
 {
-  var context = new (window.AudioContext || window.webkitAudioContext)();
-  var osc = context.createOscillator(); // instantiate an oscillator
-  osc.type = 'sine'; // this is the default - also square, sawtooth, triangle
-  osc.frequency.value = frequency; // Hz
-  osc.connect(context.destination); // connect it to the destination
-  osc.start(); // start the oscillator
-  osc.stop(context.currentTime + time); // stop 2 seconds after the current time
+  
+  const character = outputText[index];
+  const audioContext = new AudioContext();
+  const oscillator = audioContext.createOscillator();
+  oscillator.type = 'sine';
+  oscillator.connect(audioContext.destination);
+  oscillator.start();
+
+  
+  if(character == ".")
+  {
+    setTimeout(() => {
+      oscillator.stop();
+    }, 200);
+  }
+  else if(character == "-")
+  {
+    setTimeout(() => {
+      oscillator.stop();
+    }, 400);
+  }
+  
+  
+
+  
+
 }
+
