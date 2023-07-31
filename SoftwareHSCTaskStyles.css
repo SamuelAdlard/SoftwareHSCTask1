@@ -16,7 +16,12 @@ h2{
     text-align: center;
 }
 
-img{
+.cardImage{
     text-align: center;
-    transform: scale(0.5);
+    width: 15%;
+    position: relative;
+}
+
+.imageContainer{
+    text-align: center;
 }

@@ -1,19 +1,27 @@
 
+//array of different img ids
 const images = ["image1", "image2", "image3", "image4", "image5"];
+//deck array
 let deck = [];
+
 SetUpDeck();
 
 function SetUpDeck(){
+  //array of suits
   const suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+  //array of ranks
   const ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
-  
+  //generates each card
   for (let suitIndex = 0; suitIndex < suits.length; suitIndex++) {
     for (let rankIndex = 0; rankIndex < ranks.length; rankIndex++) {
+      //creates the string of the card and places it in the deck array
       let card = ranks[rankIndex] + "_of_" + suits[suitIndex];
       deck.push(card);
     }
   }
-  document.getElementById("displayText").innerHTML = deck;
+  //calls the function to display the cards nicely
+  ShowCardArray(deck);
+  //Generates the image
   ShowCardImage();
 }
 
@@ -25,7 +33,30 @@ function ShowCardImage(){
 
 
 function ShuffleDeck(){
+  
   const shuffledArray = deck.sort((a, b) => 0.5 - Math.random());
-  document.getElementById("displayText").innerHTML = shuffledArray;
+  
+  ShowCardArray(shuffledArray);
   ShowCardImage();
+}
+
+function ShowCardArray(array)
+{
+  let displayText = "";
+  for(let i = 0; i < array.length; i++)
+  {
+    let cardText = "";
+    for(let j = 0; j < array[i].length; j++)
+    {
+      if(array[i][j] == "_"){
+        cardText += " ";
+      }
+      else{
+        cardText += array[i][j];
+      }
+    }
+    
+    displayText += cardText + ", "
+  }
+  document.getElementById("displayText").innerHTML = displayText;
 }
