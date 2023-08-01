@@ -21,12 +21,15 @@ function SetUpDeck(){
   }
   //calls the function to display the cards nicely
   ShowCardArray(deck);
-  //Generates the image
+  //Displays the correct images 
   ShowCardImage();
 }
 
+//function to display the images
 function ShowCardImage(){
+  //Loops through the id array for the images
   for(let i = 0; i < 5; i++){
+    //sets the first 5 the array int
     document.getElementById(images[i]).src=`Cards/${deck[i]}.png`;
   }
 }

@@ -12,5 +12,5 @@ function GenerateAnswer()
 function GenerateRandomNumber(numberOfPossibleAnswers)
 {
     //returns a random number between the first and last indexes of an array
-    return Math.round(Math.random() * numberOfPossibleAnswers - 1);
+    return Math.round(Math.random() * (numberOfPossibleAnswers - 1));
 }

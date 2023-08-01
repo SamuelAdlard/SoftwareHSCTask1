@@ -11,6 +11,7 @@ p{
     word-break: break-all;
     overflow: auto;
 }
+    
 
 h2{
     text-align: center;
@@ -24,4 +25,20 @@ h2{
 
 .imageContainer{
     text-align: center;
+}
+
+.ball8{
+    background-image: url("https://static5.depositphotos.com/1050516/498/i/600/depositphotos_4985200-stock-photo-black-magic-ball-answer-outlook.jpg");
+    width: 600px;
+    height: 600px;
+    margin: auto;
+}
+
+.ball8Answer{
+    position: absolute;
+    color: aliceblue;
+    
+    right: 870px;
+    top: 350px;
+    
 }
